@@ -1,1 +1,1 @@
-# Dise-o-de-Infraestructura-Inteligente-para-IOT
+# Diseno-de-Infraestructura-Inteligente-para-IOT
