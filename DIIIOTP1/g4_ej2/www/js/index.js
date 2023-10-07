@@ -25,16 +25,5 @@ function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('takePhoto').addEventListener('click', cameraApp, false);
-}
-
-function cameraApp() {
-    navigator.camera.getPicture(
-        onSuccess,
-        onFail,
-        {
-            quality:50,
-            destinationType:camera.DestinationType.DATA_URL
-        },
-        )
+    document.getElementById('deviceready').classList.add('ready');
 }
