@@ -23,6 +23,7 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     // Cuando el dispositivo está listo, asociamos la función a ejecutar con el evento click del botón
     document.getElementById('botonFoto').addEventListener('click', tomarFoto);
+    document.getElementById('botonGaleria').addEventListener('click', seleccionarFotoGaleria);
 }
 
 
@@ -48,4 +49,16 @@ function onSuccess(imageData) {
 
 function onError(error) {
     console.error('Error al hacer la foto: ' + error);
+}
+
+function seleccionarFotoGaleria(){
+    var options = {
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+        targetHeight: 100,
+        targetWidth: 100
+    };
+
+    //Se llama a la galeria para mostrar la foto
+     navigator.camera.getPicture(onSuccess, onError, options);
 }
